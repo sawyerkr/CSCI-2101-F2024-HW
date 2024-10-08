@@ -6,6 +6,8 @@ package HW1;
 //        color is ___"
 public class Adlibs {
     public  String story(String name, int age, String favoriteColor) {
-        return null;
+        String storytime = new String();
+        storytime = "Once upon a time, there was a human named " + name + ". They were " + age + " years old, and their favorite color was " + favoriteColor + ".";
+        return storytime;
     }
 }
