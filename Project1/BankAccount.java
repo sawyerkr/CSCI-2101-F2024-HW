@@ -199,10 +199,12 @@ public class BankAccount {
 
             if (account.getBalance() < amount){
                 System.out.println("Insufficient funds. Withdrawing will incur a 35$ overdraft fee. Continue? (yes/no)"); // asks user for yes or no input
-                String answer = input.next();
-                if (answer.toLowerCase() == "yes"){
+                input.nextLine();
+                String answer = input.nextLine();
+                if (answer.toLowerCase().equals("yes")){
                     account.withdraw(35);
                     account.withdraw(amount);
+                    account.printBalance();
                 }
                 else {
                     System.out.println("Withdrawl aborted.");
@@ -240,5 +242,6 @@ public class BankAccount {
         } else { // this would catch any invalid choices
             System.out.println("Invalid Choice");
         }
+        input.close();
     }
 }
