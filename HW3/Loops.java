@@ -17,7 +17,18 @@ public class Loops {
     //eeeeat -> false
 
     public static boolean loopE(String str){
-        return true; // <- this should be changed 
+        int counter = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(c == 'e'){
+                counter++;
+            }
+        }
+        if(counter > 0 && counter < 4){
+            return true; 
+        }
+        return false;
+        
     }
 
     //Given a String str and int n return a larger string
@@ -26,7 +37,11 @@ public class Loops {
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
     public static String stringTimes(String str, int n) {
-        return null; // <- this should be changed 
+        String new_str = "";
+        for(int i = 0; i < n; i++){
+            new_str = new_str + str;
+        };
+        return new_str;
     } 
 
     //Create a method Given a string, return the string where all of the "z"
@@ -37,7 +52,13 @@ public class Loops {
     //stringZ("nozthaznks") -> "nothanks"
     //stringZ("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
     public static String stringZ(String str){
-        return null; // <- this should be changed 
+        String final_str = "";
+        for(int i = 0; i > str.length(); i++){
+            if(str.charAt(i) != 'z' || i == 0 || i == str.length()-1){
+                final_str = final_str + str.charAt(i);
+            }
+        }
+        return final_str; // <- this should be changed 
     }
 
     //Create a method that contains a while loop that allows for
@@ -66,11 +87,44 @@ public class Loops {
     // Number: 0
     // TOTAL ENDED --- The total is 27.
     public static void sums(){
+        System.out.println("I will add up the numbers you give me...");
+        int sum = 0;
+        boolean cont = true;
+        while (cont){
+            Scanner scan = new Scanner(System.in);
+            System.out.print("Number: ");
+            int num = scan.nextInt();
+            if (num != 0){
+                sum = sum + num;
+                System.out.println("The total so far is " + sum);
+            }
+            else {
+                scan.close();
+                cont = false;
+            }
+        }
+        System.out.println("TOTAL ENDED --- The total was " + sum);
+
     }
 
     public static void main(String[] args) {
         // Add code to help test your methods here
+        System.out.println(loopE("aaaa"));
+        System.out.println(loopE("Heeello"));
+        System.out.println(loopE("EEeeeeee"));
+        
+        System.out.println();
 
+        System.out.println(stringTimes("Tacocat", 7));
+        System.out.println(stringTimes("What the heck", 0));
+
+        System.out.println(stringZ("Zello!"));
+        System.out.println(stringZ("zlzlz"));
+        System.out.println(stringZ("ozhz zmyz zgoodnezzss"));
+
+        System.out.println();
+
+        sums();
     }
     
 }
