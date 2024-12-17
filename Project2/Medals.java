@@ -68,6 +68,44 @@ public class Medals {
             { 1, 1, 1 }
         };
         System.out.println("        Country    Gold    Silver    Bronze   Total");
+        
+        
+        for(int i=0; i<COUNTRIES; i++){
+            int total = 0;
+            System.out.printf("%15s", countries[i]);
+            for(int k=0; k<MEDALS; k++){
+                System.out.printf("%8d", counts[i][k]);
+                if(counts[i][k] == 1){
+                    total++;
+                }
+            }
+            System.out.printf("%8d\n", total);
+        }
+        int count = 0;
+        
+        System.out.printf("%15s", "TOTALS");
+        System.out.printf("%8s", "GOLD");
+        System.out.printf("%8s", "SILVER");
+        System.out.printf("%8s\n", "BRONZE");
+        System.out.printf("%15s", "");
+
+        for(int i = 0; i<MEDALS; i++){
+            count = 0;
+            for(int k = 0; k<COUNTRIES; k++){
+                if(counts[k][i] == 1){
+                    count++;
+                }
+            }
+            System.out.printf("%8d", count);
+        }
+
+
+
+
+
+
+
+
 
 
         // TODO
